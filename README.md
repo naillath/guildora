@@ -31,9 +31,10 @@ O projeto começou de forma simples, utilizando um array em memória para armaze
 ```text
 guildora/
 ├── node_modules/
+├── src/
+│   └── server.js
 ├── package.json
-├── package-lock.json
-└── app.js
+└── package-lock.json
 ```
 
 ---
@@ -61,7 +62,7 @@ npm install
 ### 4. Inicie o servidor
 
 ```bash
-node app.js
+node src/server.js
 ```
 
 O servidor será iniciado em:
