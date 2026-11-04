@@ -1,6 +1,6 @@
-# ⚔️ Guilda API
+# ⚔️ Guildora
 
-Uma API REST simples desenvolvida em **Node.js + Express** para gerenciar aventureiros de uma guilda.
+Uma API REST desenvolvida em **Node.js + Express** para gerenciar aventureiros de uma guilda.
 
 Este projeto faz parte dos meus estudos de **desenvolvimento back-end**, com foco em construção de APIs, rotas HTTP, manipulação de dados e fundamentos de CRUD.
 
@@ -8,7 +8,7 @@ Este projeto faz parte dos meus estudos de **desenvolvimento back-end**, com foc
 
 ## 🧙 Sobre o projeto
 
-A **Guilda API** permite cadastrar e consultar aventureiros através de uma API REST.
+A **Guildora** permite cadastrar, consultar, listar e atualizar aventureiros através de uma API REST.
 
 O projeto começou de forma simples, utilizando um array em memória para armazenar os aventureiros. A ideia é evoluir a aplicação gradualmente, adicionando novas operações e posteriormente persistência de dados.
 
@@ -18,18 +18,18 @@ O projeto começou de forma simples, utilizando um array em memória para armaze
 
 ## 🛠️ Tecnologias
 
-* **Node.js**
-* **Express.js**
-* **JavaScript**
-* **JSON**
-* **Postman** para testes das requisições
+- **Node.js**
+- **Express.js**
+- **JavaScript**
+- **JSON**
+- **Postman** para testes das requisições
 
 ---
 
 ## 📂 Estrutura atual
 
 ```text
-guilda-api/
+guildora/
 ├── node_modules/
 ├── package.json
 ├── package-lock.json
@@ -43,13 +43,13 @@ guilda-api/
 ### 1. Clone o repositório
 
 ```bash
-git clone URL_DO_REPOSITORIO
+git clone https://github.com/naillath/guildora.git
 ```
 
 ### 2. Acesse a pasta
 
 ```bash
-cd guilda-api
+cd guildora
 ```
 
 ### 3. Instale as dependências
@@ -64,17 +64,13 @@ npm install
 node app.js
 ```
 
-O servidor será iniciado na porta:
+O servidor será iniciado em:
 
 ```text
 http://localhost:3000
 ```
 
-Ao iniciar, o terminal deverá exibir:
-
-```text
-Servidor da guilda, rodando na porta 3000.
-```
+Ao iniciar, o terminal deverá exibir a mensagem configurada na aplicação.
 
 ---
 
@@ -91,7 +87,7 @@ GET /
 Resposta:
 
 ```text
-⚔️ Guilda API online. Bem-vindo à guilda aventureiro(a)!
+⚔️ Guildora online. Bem-vindo à guilda, aventureiro(a)!
 ```
 
 ---
@@ -155,7 +151,7 @@ Caso o aventureiro não exista:
 }
 ```
 
-A API retorna o status:
+Status HTTP:
 
 ```text
 404 Not Found
@@ -206,7 +202,8 @@ Exemplo:
 ```http
 PUT /aventureiros/1
 ```
-Exemplo de corpo da requisição:
+
+Corpo da requisição:
 
 ```json
 {
@@ -233,7 +230,7 @@ Caso o aventureiro não exista:
 }
 ```
 
-A API retorna o status:
+Status HTTP:
 
 ```text
 404 Not Found
@@ -242,10 +239,12 @@ A API retorna o status:
 Caso `nome` ou `classe` não seja informado:
 
 ```json
-{ "mensagem": "Nome e classe são obrigatórios" }
+{
+    "mensagem": "Nome e classe são obrigatórios"
+}
 ```
 
-A API retorna o status:
+Status HTTP:
 
 ```text
 400 Bad Request
@@ -261,7 +260,7 @@ As requisições podem ser testadas utilizando o **Postman**.
 
 Exemplo para cadastrar um aventureiro:
 
-```text
+```http
 POST http://localhost:3000/aventureiros
 ```
 
@@ -271,7 +270,7 @@ No **Body**, selecione:
 raw → JSON
 ```
 
-E envie:
+Envie:
 
 ```json
 {
@@ -283,11 +282,11 @@ E envie:
 
 Depois, utilize:
 
-```text
+```http
 GET http://localhost:3000/aventureiros
 ```
 
-para visualizar os aventureiros cadastrados.
+Para visualizar os aventureiros cadastrados.
 
 ---
 
@@ -309,21 +308,22 @@ Essa limitação faz parte da versão atual do projeto e será resolvida em etap
 
 ## 🗺️ Próximos passos
 
-O projeto será evoluído gradualmente para implementar outras operações de uma API CRUD:
+O projeto será evoluído gradualmente para aprimorar suas funcionalidades e implementar boas práticas de desenvolvimento back-end:
 
-* [x] GET `/`
-* [x] GET `/aventureiros`
-* [x] GET `/aventureiros/:id`
-* [x] POST `/aventureiros`
-* [x] PUT `/aventureiros/:id`
-* [ ] PATCH `/aventureiros/:id`
-* [ ] DELETE `/aventureiros/:id`
-* [ ] Validação dos dados recebidos
-* [ ] Tratamento de erros
-* [ ] Separação das responsabilidades em arquivos
-* [ ] Persistência com banco de dados
-* [ ] Testes automatizados
-* [ ] Documentação da API
+- [x] GET `/`
+- [x] GET `/aventureiros`
+- [x] GET `/aventureiros/:id`
+- [x] POST `/aventureiros`
+- [x] PUT `/aventureiros/:id`
+- [x] PATCH `/aventureiros/:id`
+- [x] DELETE `/aventureiros/:id`
+- [ ] Validação dos dados recebidos no cadastro e nas atualizações
+- [ ] Validação de IDs e prevenção de cadastros duplicados
+- [ ] Tratamento de erros e requisições inválidas
+- [ ] Separação das responsabilidades em arquivos
+- [ ] Persistência com banco de dados
+- [ ] Testes automatizados
+- [ ] Documentação completa da API
 
 ---
 
@@ -331,24 +331,24 @@ O projeto será evoluído gradualmente para implementar outras operações de um
 
 Mais do que construir uma API funcional, este projeto tem como objetivo praticar os fundamentos necessários para o desenvolvimento **back-end com Node.js**:
 
-* HTTP
-* Métodos HTTP
-* Rotas
-* Parâmetros de rota
-* Status codes
-* JSON
-* CRUD
-* Express
-* Manipulação de requisições e respostas
-* Tratamento de erros
-* Persistência de dados
-* Organização de projetos back-end
+- HTTP
+- Métodos HTTP
+- Rotas
+- Parâmetros de rota
+- Status codes
+- JSON
+- CRUD
+- Express
+- Manipulação de requisições e respostas
+- Tratamento de erros
+- Persistência de dados
+- Organização de projetos back-end
 
 ---
 
 ## ⚔️ Evolução
 
-A Guilda API está sendo construída por etapas.
+A **Guildora** está sendo construída por etapas.
 
 A ideia é começar com o básico, entender cada parte da aplicação e evoluir gradualmente até transformar a pequena guilda em uma API back-end mais completa.
 
